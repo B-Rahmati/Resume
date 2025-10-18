@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IEC Lab — Bahram Rahmati</title>
+  <style>
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b76ef;
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 16px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+
+    .section img {
+      width: 45%;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    /* Alternate layout for right/left */
+    .section.right-img { flex-direction: row-reverse; }
+    .section.left-img { flex-direction: row; }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .section { flex-direction: column; text-align: center; }
+      .section img { width: 100%; }
+      .text { width: 100%; }
+    }
+
+    h1 { margin-top: 0; }
+    h2 { margin-bottom: 4px; margin-top: 24px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div><strong>Bahram Rahmati</strong></div>
+    <nav>
+      <a href="index.html">About Me</a>
+      <a href="iec.html">IEC Lab</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>IEC Laboratory</h1>
+    <p>The <strong>Intelligent Electronics and Control (IEC) Laboratory</strong> was established under my supervision at [University Name].  
+       The lab focuses on advanced control systems, embedded devices, and intelligent hardware–software integration.</p>
+
+    <!-- Section 1: Top -->
+    <div class="section right-img">
+      <div class="text">
+        <h2>Lab Setup Overview</h2>
+        <p>[Describe the lab setup here: equipment, purpose, experiments conducted.]</p>
+      </div>
+      <img src="images/lab1.jpg" alt="IEC Lab Top View">
+    </div>
+
+    <!-- Section 2: Middle -->
+    <div class="section left-img">
+      <div class="text">
+        <h2>Student Experiments</h2>
+        <p>[Describe student activities, measurements, experiments, mentoring, etc.]</p>
+      </div>
+      <img src="images/lab2.jpg" alt="IEC Lab Middle View">
+    </div>
+
+    <!-- Section 3: Bottom -->
+    <div class="section right-img">
+      <div class="text">
+        <h2>Instrumentation & Sensors</h2>
+        <p>[Describe calibration, instrumentation, sensor setup, and key research outcomes.]</p>
+      </div>
+      <img src="images/lab3.jpg" alt="IEC Lab Bottom View">
+    </div>
+
+  </div>
+</body>
+</html>
