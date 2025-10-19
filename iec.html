@@ -28,22 +28,21 @@
     text-decoration: none;
     font-weight: 500;
   }
+  nav a:hover { text-decoration: underline; }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
-
+  /* Title */
   h1.page-title {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 20px 0 10px;   /* reduced vertical space */
     font-size: 32px;
     letter-spacing: 1px;
     color: #0b76ef;
   }
 
+  /* pic1 */
   .full-width-image {
     width: 100%;
-    height: 550px; /* increased height */
+    height: 400px;         /* reverted size */
     object-fit: cover;
   }
 
@@ -53,7 +52,7 @@
     padding: 0 20px;
   }
 
-  /* Second section: text + medium image */
+  /* Section 2: text + medium image */
   .section-two {
     display: flex;
     flex-wrap: wrap;
@@ -61,45 +60,39 @@
     gap: 20px;
     margin-bottom: 40px;
   }
-
   .section-two .text {
     flex: 1;
     min-width: 300px;
   }
-
   .section-two img {
     flex-shrink: 0;
     width: 400px;
-    height: 500px; /* medium image taller */
+    height: 500px;
     object-fit: cover;
     border-radius: 12px;
+    margin-right: 40px;   /* extra space on eastern (right) side */
   }
 
-  /* Third section: full-width text */
-  .section-three {
-    margin-bottom: 40px;
-  }
+  /* Section 3: full-width text */
+  .section-three { margin-bottom: 40px; }
 
-  /* Fourth section: full-width large image */
+  /* Section 4: pic3 larger */
   .section-four img {
     width: 100%;
-    height: 550px; /* increased height for bottom image */
+    height: 600px;         /* slightly larger */
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 40px;
   }
 
-  h1, h2 {
-    margin-top: 0;
-  }
+  h1, h2 { margin-top: 0; }
 
   @media(max-width: 800px){
-    .section-two {
-      flex-direction: column;
-    }
+    .section-two { flex-direction: column; }
     .section-two img {
       width: 100%;
       height: auto;
+      margin-right: 0;
     }
   }
 </style>
@@ -114,14 +107,13 @@
   </nav>
 </header>
 
-<!-- Page Title -->
 <h1 class="page-title">IEC Laboratory</h1>
 
-<!-- First large full-width image -->
+<!-- pic1 -->
 <img src="pic1.jpg" alt="IEC Laboratory" class="full-width-image">
 
 <div class="container">
-  <!-- Second section: text + medium image -->
+  <!-- pic2 + text -->
   <div class="section-two">
     <div class="text">
       <h2>Lab Setup & Overview</h2>
@@ -134,7 +126,7 @@
     <img src="pic2.jpg" alt="IEC Medium Image">
   </div>
 
-  <!-- Third section: full-width text -->
+  <!-- text -->
   <div class="section-three">
     <h2>Experiments & Research</h2>
     <p>
@@ -144,7 +136,7 @@
     </p>
   </div>
 
-  <!-- Fourth section: full-width large image -->
+  <!-- pic3 -->
   <div class="section-four">
     <img src="pic3.jpg" alt="IEC Full-width Bottom Image">
   </div>
