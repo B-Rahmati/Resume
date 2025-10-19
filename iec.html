@@ -37,11 +37,11 @@
     color: black;
   }
 
-  /* Slideshow container */
+  /* Slideshow container (doubled size) */
   .slideshow-container {
     position: relative;
-    width: 620px;    /* 6.47" × 96px/in */
-    height: 348px;   /* 3.63" × 96px/in */
+    width: 1240px;    /* doubled width */
+    height: 696px;    /* doubled height */
     margin: 20px auto 40px;
     background-color: #0b76ef; /* blue background for empty space */
     border-radius: 12px;
@@ -65,10 +65,10 @@
   .prev, .next {
     position: absolute;
     top: 50%;
-    font-size: 30px;
+    font-size: 40px; /* slightly bigger for larger container */
     color: white;
     background-color: rgba(0,0,0,0.5);
-    padding: 8px 12px;
+    padding: 12px 16px;
     border-radius: 50%;
     cursor: pointer;
     user-select: none;
@@ -116,10 +116,12 @@
 
   h1, h2 { margin-top: 0; }
 
+  @media(max-width: 1400px){
+    .slideshow-container { width: 90%; height: auto; }
+  }
   @media(max-width: 800px){
     .section-two { flex-direction: column; }
     .section-two img { width: 100%; height: auto; margin-right:0; }
-    .slideshow-container { width: 90%; height: auto; }
   }
 </style>
 </head>
@@ -135,7 +137,7 @@
 
 <h1 class="page-title">IEC Laboratory</h1>
 
-<!-- Slideshow container -->
+<!-- Slideshow container (doubled) -->
 <div class="slideshow-container">
   <img class="slides" src="slide1.jpg" alt="Slide 1">
   <img class="slides" src="slide2.jpg" alt="Slide 2">
