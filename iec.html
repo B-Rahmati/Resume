@@ -37,28 +37,28 @@
     color: black;
   }
 
-  /* Slideshow container */
+  /* Slideshow container (20% bigger, gray background) */
   .slideshow-container {
     position: relative;
-    width: 620px;    /* 6.47" × 96px/in */
-    height: 348px;   /* 3.63" × 96px/in */
+    width: 744px;    /* 620px × 1.2 */
+    height: 418px;   /* 348px × 1.2 */
     margin: 20px auto 40px;
-    background-color: #0b76ef; /* blue background for empty space */
+    background-color: gray; /* gray background for empty space */
     border-radius: 12px;
     overflow: hidden;
   }
 
   /* Slides */
   .slides {
-    width: auto;  /* preserve original width */
-    height: auto; /* preserve original height */
+    width: auto;
+    height: auto;
     max-width: 100%;
     max-height: 100%;
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* center the image in the box */
+    transform: translate(-50%, -50%);
   }
 
   /* Control buttons */
@@ -99,7 +99,7 @@
     height: 500px;
     object-fit: cover;
     border-radius: 12px;
-    margin-right: 50px; /* extra space on right */
+    margin-right: 50px;
   }
 
   /* Section 3: full-width text */
@@ -135,7 +135,7 @@
 
 <h1 class="page-title">IEC Laboratory</h1>
 
-<!-- Slideshow container -->
+<!-- Slideshow container 20% bigger -->
 <div class="slideshow-container">
   <img class="slides" src="slide1.jpg" alt="Slide 1">
   <img class="slides" src="slide2.jpg" alt="Slide 2">
@@ -219,3 +219,4 @@ function changeSlide(n){
 
 </body>
 </html>
+
