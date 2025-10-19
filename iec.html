@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   nav a {
@@ -162,10 +163,51 @@
     border-radius: 12px;
   }
 
-  @media(max-width: 800px){
-    .section-role { flex-direction: column; }
-    .section-role img { width: 100%; height: auto; margin: 0 auto; }
-    .slideshow-container { width: 90%; height: auto; }
+  /* MOBILE & TABLET OPTIMIZATION */
+  @media (max-width: 800px) {
+    body {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 5px 8px;
+    }
+
+    .intro, .section-what, .section-role, .section-outcomes, .section-design {
+      padding: 0 10px;
+    }
+
+    .slideshow-container {
+      width: 100%;
+      height: auto;
+    }
+
+    .slides {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .section-role { 
+      flex-direction: column; 
+      text-align: left;
+    }
+
+    .section-role img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .section-design img {
+      height: auto;
+    }
   }
 </style>
 </head>
@@ -254,7 +296,6 @@ let slideTimer;
 // Show the initial slide
 showSlides();
 
-// Function to display slides
 function showSlides() {
   let slides = document.getElementsByClassName("slides");
   for(let i=0;i<slides.length;i++){
