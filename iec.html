@@ -55,7 +55,7 @@
     padding-left: 20px;
   }
 
-  /* ✅ Responsive & print-friendly slideshow container */
+  /* ✅ Slideshow Container */
   .slideshow-container {
     position: relative;
     width: 90%;
@@ -67,7 +67,6 @@
     overflow: hidden;
   }
 
-  /* ✅ Slides fit within container without distortion */
   .slides {
     width: 100%;
     height: 100%;
@@ -79,7 +78,6 @@
     left: 0;
   }
 
-  /* ✅ Navigation arrows remain responsive */
   .prev, .next {
     position: absolute;
     top: 50%;
@@ -95,7 +93,6 @@
   .prev { left: 10px; }
   .next { right: 10px; }
 
-  /* ✅ Adjust for very small screens */
   @media (max-width: 600px) {
     .slideshow-container {
       width: 95%;
@@ -123,11 +120,11 @@
     margin-bottom: 30px;
   }
 
-  /* Section: Role Image (stays in the middle) */
+  /* Section: Role Image (smaller and centered) */
   .section-role-image img {
     display: block;
     margin: 20px auto;
-    max-width: 80%;
+    max-width: 55%; /* ✅ about 30% smaller */
     height: auto;
     border-radius: 12px;
     object-fit: contain;
@@ -147,7 +144,7 @@
     margin-bottom: 20px;
   }
 
-  /* Section: My Role (moved here) */
+  /* Section: My Role (text moved here) */
   .section-role-text {
     margin-bottom: 20px;
   }
@@ -163,6 +160,7 @@
     nav a { display: inline-block; margin: 5px 8px; }
     .slideshow-container { width: 100%; height: auto; }
     .section-design img { height: auto; }
+    .section-role-image img { max-width: 85%; } /* ✅ fits better on small screens */
   }
 </style>
 </head>
@@ -204,7 +202,7 @@
     </p>
   </div>
 
-  <!-- Section: Role Image (stays here) -->
+  <!-- Section: Role Image (smaller, centered) -->
   <div class="section-role-image">
     <img src="pic2.jpg" alt="IEC Setup Photo">
   </div>
