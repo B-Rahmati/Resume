@@ -54,14 +54,15 @@
     margin-top: 0;
     padding-left: 20px;
   }
+
   /* ✅ Responsive & print-friendly slideshow container */
   .slideshow-container {
     position: relative;
-    width: 90%;                /* fits nicely within portrait or small screens */
-    max-width: 800px;          /* prevents it from being too wide on desktop */
-    aspect-ratio: 16 / 9;      /* keeps a balanced proportion for screens */
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
     margin: 20px auto 40px;
-    background-color: #d3d3d3; /* gray background for empty space */
+    background-color: #d3d3d3;
     border-radius: 12px;
     overflow: hidden;
   }
@@ -70,7 +71,7 @@
   .slides {
     width: 100%;
     height: 100%;
-    object-fit: contain;       /* shows full image with gray space if needed */
+    object-fit: contain;
     background-color: #d3d3d3;
     display: none;
     position: absolute;
@@ -119,33 +120,17 @@
 
   /* Section: What is an IEC */
   .section-what {
-   display: block;
-  margin: 20px auto;
-  max-width: 90%;     /* limits width so it won’t exceed slideshow size */
-  height: auto;        /* keeps aspect ratio */
-  border-radius: 12px;
-  object-fit: contain; /* prevents zooming or stretching */
+    margin-bottom: 30px;
   }
 
-  /* Section: My Role */
-  .section-role {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 15px; /* reduced spacing to outcome */
-  }
-  .section-role .text {
-    flex: 1;
-    min-width: 300px;
-  }
-  .section-role img {
-    flex-shrink: 0;
-    width: 630px;  /* 30% smaller than before */
-    height: auto;  /* natural height */
-    object-fit: contain;
+  /* Section: Role Image (stays in the middle) */
+  .section-role-image img {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%;
+    height: auto;
     border-radius: 12px;
-    order: -1; /* left side */
+    object-fit: contain;
   }
 
   /* Section: Outcome */
@@ -162,6 +147,11 @@
     margin-bottom: 20px;
   }
 
+  /* Section: My Role (moved here) */
+  .section-role-text {
+    margin-bottom: 20px;
+  }
+
   /* Section: Supervisors */
   .section-supervisors {
     margin-bottom: 40px;
@@ -172,8 +162,6 @@
     header { flex-direction: column; text-align: center; }
     nav a { display: inline-block; margin: 5px 8px; }
     .slideshow-container { width: 100%; height: auto; }
-    .section-role { flex-direction: column; }
-    .section-role img { width: 100%; height: auto; margin-bottom: 15px; order: 0; }
     .section-design img { height: auto; }
   }
 </style>
@@ -213,8 +201,12 @@
     <h2>What is an IEC?</h2>
     <p>
       An IEC is a heat and mass exchanger cooling an airstream, Product Air, without adding moisture. In a tubular configuration, the Product Air flows inside the tubes, while another airstream, Working Air, flows outside the tubes. The direct contact between Working Air and droplets at the shell side produces a cooling potential to absorb heat from the internal flow, Product Air.
-      <img src="pic2.jpg" alt="IEC Setup Photo">
     </p>
+  </div>
+
+  <!-- Section: Role Image (stays here) -->
+  <div class="section-role-image">
+    <img src="pic2.jpg" alt="IEC Setup Photo">
   </div>
 
   <!-- Section: Outcome -->
@@ -236,22 +228,20 @@
     <img src="pic3.jpg" alt="IEC Design Photo">
   </div>
 
-    <!-- Section: My Role -->
-  <div class="section-role">
-    <div class="text">
-      <h2>My Role</h2>
-      <ul>
-        <li>Funding (100% personal)</li>
-        <li>Analytical analysis for design optimization</li>
-        <li>Industrial drafting</li>
-        <li>Graphical works</li>
-        <li>Fabrication and assembly</li>
-        <li>Sensor installation and calibration</li>
-        <li>Validation and tests</li>
-      </ul>
-    </div>
+  <!-- Section: My Role (text moved here) -->
+  <div class="section-role-text">
+    <h2>My Role</h2>
+    <ul>
+      <li>Funding (100% personal)</li>
+      <li>Analytical analysis for design optimization</li>
+      <li>Industrial drafting</li>
+      <li>Graphical works</li>
+      <li>Fabrication and assembly</li>
+      <li>Sensor installation and calibration</li>
+      <li>Validation and tests</li>
+    </ul>
   </div>
-  
+
   <!-- Section: Supervisors -->
   <div class="section-supervisors">
     <h2>Supervisors</h2>
