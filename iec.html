@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IEC Laboratory — Bahram Rahmati</title>
+<title>Bahram Rahmati — IEC Lab</title>
 <style>
   body {
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Times New Roman", serif;
     margin: 0;
     background: #f4f6f8;
     color: #111;
     line-height: 1.6;
+    font-size: 18px;
   }
 
   header {
@@ -20,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   nav a {
@@ -37,37 +39,52 @@
     color: #0b76ef;
   }
 
-  /* Slideshow container */
+  h2 {
+    color: #0b76ef;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p, li {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    margin-top: 0;
+    padding-left: 20px;
+  }
+  /* ✅ Responsive & print-friendly slideshow container */
   .slideshow-container {
     position: relative;
-    width: 744px;    /* 20% smaller than previous large version */
-    height: 417px;
+    width: 90%;                /* fits nicely within portrait or small screens */
+    max-width: 800px;          /* prevents it from being too wide on desktop */
+    aspect-ratio: 16 / 9;      /* keeps a balanced proportion for screens */
     margin: 20px auto 40px;
-    background-color: #ccc; /* gray background for empty space */
+    background-color: #d3d3d3; /* gray background for empty space */
     border-radius: 12px;
     overflow: hidden;
   }
 
-  /* Slides */
+  /* ✅ Slides fit within container without distortion */
   .slides {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;       /* shows full image with gray space if needed */
+    background-color: #d3d3d3;
     display: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
   }
 
-  /* Control buttons */
+  /* ✅ Navigation arrows remain responsive */
   .prev, .next {
     position: absolute;
     top: 50%;
-    font-size: 30px;
+    font-size: 28px;
     color: white;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 8px 12px;
     border-radius: 50%;
     cursor: pointer;
@@ -77,59 +94,82 @@
   .prev { left: 10px; }
   .next { right: 10px; }
 
+  /* ✅ Adjust for very small screens */
+  @media (max-width: 600px) {
+    .slideshow-container {
+      width: 95%;
+      aspect-ratio: 4 / 3;
+    }
+    .prev, .next {
+      font-size: 22px;
+      padding: 6px 10px;
+    }
+  }
+
   .container {
     max-width: 1000px;
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
     padding: 0 20px;
   }
 
-  h2 {
-    color: #0b76ef;
-    margin-top: 0;
-    font-size: 24px;
-  }
-
-  p, li {
-    font-size: 18px;
-  }
-
-  /* Section styling */
-  .section-intro, .section-three, .section-four,
-  .section-role, .section-outcome, .section-supervisors {
+  /* Intro Section */
+  .intro {
     margin-bottom: 30px;
   }
 
-  /* Centered image */
-  .section-role .role-image {
-    text-align: center;
-    margin-top: 10px;
+  /* Section: What is an IEC */
+  .section-what {
+    margin-bottom: 30px;
   }
 
-  .section-role .role-image img {
-    width: 55%;
-    max-width: 420px;
-    height: auto;
+  /* Section: My Role */
+  .section-role {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 15px; /* reduced spacing to outcome */
+  }
+  .section-role .text {
+    flex: 1;
+    min-width: 300px;
+  }
+  .section-role img {
+    flex-shrink: 0;
+    width: 630px;  /* 30% smaller than before */
+    height: auto;  /* natural height */
+    object-fit: contain;
     border-radius: 12px;
+    order: -1; /* left side */
   }
 
-  .section-four img {
+  /* Section: Outcome */
+  .section-outcome {
+    margin-bottom: 20px;
+  }
+
+  /* Section: Design Steps */
+  .section-design img {
     width: 100%;
     height: 600px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 12px;
+    margin-bottom: 20px;
   }
 
-  @media(max-width: 800px){
-    .slideshow-container {
-      width: 95%;
-      height: auto;
-    }
-    .section-role .role-image img {
-      width: 90%;
-    }
-    .section-four img {
-      height: auto;
-    }
+  /* Section: Supervisors */
+  .section-supervisors {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 800px) {
+    body { font-size: 16px; }
+    header { flex-direction: column; text-align: center; }
+    nav a { display: inline-block; margin: 5px 8px; }
+    .slideshow-container { width: 100%; height: auto; }
+    .section-role { flex-direction: column; }
+    .section-role img { width: 100%; height: auto; margin-bottom: 15px; order: 0; }
+    .section-design img { height: auto; }
   }
 </style>
 </head>
@@ -138,89 +178,82 @@
 <header>
   <div><strong>Bahram Rahmati</strong></div>
   <nav>
-    <a href="index.html">About Me</a>
-    <a href="iec.html">IEC Lab</a>
+    <a href="index.html">Profile & CV</a>
+    <a href="iec.html">My Research (IEC Lab)</a>
   </nav>
 </header>
 
 <h1 class="page-title">IEC Laboratory</h1>
 
-<!-- Slideshow container -->
+<!-- Slideshow first -->
 <div class="slideshow-container">
   <img class="slides" src="Slide1.jpg" alt="Slide 1">
   <img class="slides" src="Slide2.jpg" alt="Slide 2">
   <img class="slides" src="Slide3.jpg" alt="Slide 3">
   <img class="slides" src="Slide4.jpg" alt="Slide 4">
-
   <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
   <a class="next" onclick="changeSlide(1)">&#10095;</a>
 </div>
 
-<!-- Introduction section -->
 <div class="container">
-  <div class="section-intro">
-    <p>
-      The Indirect Evaporative Cooling (IEC) laboratory aims to produce moisture-free and high-quality cool air. 
-      Resulted based on my M.Sc. thesis in 2023, this laboratory is one of the very few setups in Iran 
-      representing a scalable prototype IEC for energy-efficient and sustainable cooling.
-    </p>
+  <!-- Intro Section after slideshow -->
+  <div class="intro">
+    The Indirect Evaporative Cooling (IEC) laboratory aims to produce moisture-free and high-quality cool air. 
+    Resulted based on my M.Sc. thesis in 2023, this laboratory is one of the very few setups in Iran representing a scalable prototype IEC 
+    for energy-efficient and sustainable cooling.
   </div>
 
-  <!-- What is an IEC -->
-  <div class="section-three">
+  <!-- Section: What is an IEC -->
+  <div class="section-what">
     <h2>What is an IEC?</h2>
     <p>
-      An IEC is a heat and mass exchanger cooling an airstream, Product Air, without adding moisture. 
-      In a tubular configuration, the Product Air flows inside the tubes, while another airstream, Working Air, 
-      flows outside the tubes. The direct contact between Working Air and droplets at the shell side 
-      produces a cooling potential to absorb heat from the internal flow, Product Air.
+      An IEC is a heat and mass exchanger cooling an airstream, Product Air, without adding moisture. In a tubular configuration, the Product Air flows inside the tubes, while another airstream, Working Air, flows outside the tubes. The direct contact between Working Air and droplets at the shell side produces a cooling potential to absorb heat from the internal flow, Product Air.
     </p>
   </div>
 
-  <!-- Design Steps -->
-  <div class="section-four">
-    <h2>Design Steps</h2>
-    <img src="pic3.jpg" alt="IEC Design Image">
-  </div>
-
-  <!-- My Role -->
+  <!-- Section: My Role -->
   <div class="section-role">
-    <h2>My Role</h2>
-    <ul>
-      <li>Funding (100% personal)</li>
-      <li>Analytical analysis for design optimization</li>
-      <li>Industrial drafting</li>
-      <li>Graphical works</li>
-      <li>Fabrication and assembly</li>
-      <li>Sensor installation and calibration</li>
-      <li>Validation and tests</li>
-    </ul>
-    <div class="role-image">
-      <img src="pic2.jpg" alt="IEC Lab Equipment">
+    <img src="pic2.jpg" alt="IEC Setup Photo">
+    <div class="text">
+      <h2>My Role</h2>
+      <ul>
+        <li>Funding (100% personal)</li>
+        <li>Analytical analysis for design optimization</li>
+        <li>Industrial drafting</li>
+        <li>Graphical works</li>
+        <li>Fabrication and assembly</li>
+        <li>Sensor installation and calibration</li>
+        <li>Validation and tests</li>
+      </ul>
     </div>
   </div>
 
-  <!-- Outcome -->
+  <!-- Section: Outcome -->
   <div class="section-outcome">
     <h2>Outcome</h2>
     <p>
-      During a period of two years, my thesis introduced a new configuration of the tubular exchanger, 
-      enhancing cooling capacity and eliminating the need for maintenance (as a result of fouling).
-      The following paper represents the results:<br><br>
-      Rahmati, B., Jadidi, A. M. & Valipour, M. S. (2024) 
-      “Enhancing the performance of an M-cycle based tubular indirect evaporative cooler by mesh screens.” 
-      <i>International Communications in Heat and Mass Transfer</i> 
-      (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0735193324003373" target="_blank">read the article here</a>).
+      During a period of two years, my thesis introduced a new configuration of the tubular exchanger, enhancing cooling capacity 
+      and eliminating the need for maintenance (as a result of fouling).<br><br>
+      The following paper represents the results:<br>
+      Rahmati, B., Jadidi, A. M. & Valipour, M. S. (2024). “Enhancing the performance of an M-cycle based tubular indirect evaporative cooler by mesh screens.” 
+      International Communications in Heat and Mass Transfer 
+      (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0735193324003373" target="_blank" style="color:#0b76ef; text-decoration: underline;">Read the article here</a>)
     </p>
   </div>
 
-  <!-- Supervisors -->
+  <!-- Section: Design Steps -->
+  <div class="section-design">
+    <h2>Design Steps</h2>
+    <img src="pic3.jpg" alt="IEC Design Photo">
+  </div>
+
+  <!-- Section: Supervisors -->
   <div class="section-supervisors">
     <h2>Supervisors</h2>
-    <p>
-      1. Dr. Amir Mohammad Jadidi<br>
-      2. Prof. Mohammad Sadegh Valipour
-    </p>
+    <ul>
+      <li>Dr. Amir Mohammad Jadidi</li>
+      <li>Prof. Mohammad Sadegh Valipour</li>
+    </ul>
   </div>
 </div>
 
@@ -232,26 +265,26 @@ showSlides();
 
 function showSlides() {
   let slides = document.getElementsByClassName("slides");
-  for(let i=0;i<slides.length;i++){
-    slides[i].style.display="none";
+  for(let i=0; i<slides.length; i++){
+    slides[i].style.display = "none";
   }
   slideIndex++;
-  if(slideIndex>slides.length){ slideIndex=1; }
-  slides[slideIndex-1].style.display="block";
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  slides[slideIndex-1].style.display = "block";
 
   clearTimeout(slideTimer);
   slideTimer = setTimeout(showSlides, 30000);
 }
 
-function changeSlide(n){
+function changeSlide(n) {
   let slides = document.getElementsByClassName("slides");
   slideIndex += n;
-  if(slideIndex>slides.length){ slideIndex=1; }
-  if(slideIndex<1){ slideIndex=slides.length; }
-  for(let i=0;i<slides.length;i++){
-    slides[i].style.display="none";
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  if (slideIndex < 1) { slideIndex = slides.length; }
+  for(let i=0; i<slides.length; i++){
+    slides[i].style.display = "none";
   }
-  slides[slideIndex-1].style.display="block";
+  slides[slideIndex-1].style.display = "block";
 
   clearTimeout(slideTimer);
   slideTimer = setTimeout(showSlides, 30000);
